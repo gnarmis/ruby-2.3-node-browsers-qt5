@@ -1,4 +1,4 @@
-FROM circleci/ruby:2.3-node-browsers
+FROM circleci/ruby:2.3.7-jessie-node-browsers
 
 # Install qt5 (for capybara-webkit gem) and also
 # postgresql-client and mysql-client
@@ -9,3 +9,5 @@ RUN sudo apt-get update \
     ruby-dev zlib1g-dev \
     postgresql-client mysql-client \
   && sudo rm -rf /var/lib/apt/lists/*
+
+WORKDIR /home/circleci
